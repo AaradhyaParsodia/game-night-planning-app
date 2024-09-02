@@ -5,11 +5,13 @@ const gameLibrarySchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: Users,
         required: true,
+        index: true
     },
     allGamesId: {
         type: mongoose.Types.ObjectId,
         ref: Games,
-        required: true
+        required: true,
+        index: true
     },
     markGame: {
         type: String,
