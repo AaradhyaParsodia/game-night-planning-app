@@ -16,9 +16,27 @@ const gameNightSchema = new mongoose.Schema({
         default: "India",
         required: true,
     },
+    maxPlayers: {
+        type: Number,
+        required: true,
+        default: 6
+    },
+    gameCode:{
+        type: String,
+        required: true
+    },
+    isActive: {
+        type: Boolean,
+        default: true
+    },
     gameDetails: {
         type: mongoose.Types.ObjectId,
-        ref: AllGames,
+        ref: Games,
+        required: true
+    },
+    createdBy: {
+        type: mongoose.Types.ObjectId,
+        ref: Users,
         required: true
     }
 });

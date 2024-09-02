@@ -1,5 +1,11 @@
 import mongoose from "mongoose";
 
+// const personalSavedGameSchema = new mongoose.Schema({
+//     type: mongoose.Types.ObjectId,
+//     ref: GameLibrary,
+//     required: true
+// });
+
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
@@ -26,7 +32,10 @@ const userSchema = new mongoose.Schema({
     hash: {
         type: String,
         required: true,
-    }
+    },
+    // gameLibrary: {
+    //     type: [personalSavedGameSchema],
+    // }
     }, {
         timestamps: true
     }
