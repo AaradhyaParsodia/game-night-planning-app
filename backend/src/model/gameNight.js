@@ -32,6 +32,10 @@ const gameNightSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
+    isDeleted: {
+        type: Boolean,
+        default: false
+    },
     gameId: {
         type: mongoose.Types.ObjectId,
         ref: Games,

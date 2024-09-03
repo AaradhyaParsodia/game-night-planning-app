@@ -1,7 +1,10 @@
 import express from "express";
 import authMiddleware from "../middleware/userMiddleware.js"
-import { createGameNight } from "../controller/gameNight/createGameNight.js";
+import { createGameNightCtrl, getGameNightCtrl, updateGameNightCtrl } from "../controller/gameNight/index.js";
 
 export const gameNightRouter = express.Router();
 
-gameNightRouter.post("/create", authMiddleware, createGameNight);
+gameNightRouter.use(authMiddleware);
+gameNightRouter.post("/create", createGameNightCtrl.createGameNight);
+gameNightRouter.get("/:gameCode", getGameNightCtrl.getGameNight);
+gameNightRouter.put("/:gameCode", updateGameNightCtrl.updateGameNight);

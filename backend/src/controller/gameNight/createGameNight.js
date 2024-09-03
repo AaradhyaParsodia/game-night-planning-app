@@ -39,7 +39,7 @@ export async function createGameNight(req, res){
 
         do {
             gameCode = generateGameCode();
-            existingGameNight = await GameNight.findOne({ gameCode });
+            existingGameNight = await GameNight.findOne({ gameCode: gameCode, isDeleted: false });
         } while (existingGameNight);
         
         const gameNight = await GameNight.create({
