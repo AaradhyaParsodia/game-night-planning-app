@@ -6,3 +6,5 @@ const gamesSchema = new mongoose.Schema({
         required: true
     },
 });
+
+export default mongoose.model("Games", gamesSchema);
