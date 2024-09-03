@@ -12,14 +12,14 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true,
         lowercase: true,
-        maxLength: 50
+        maxLength: 35
     },
     lastName: {
         type: String,
         required: true,
         trim: true,
         lowercase: true,
-        maxLength: 50
+        maxLength: 35
     },
     username: {
         type: String,
@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
         trim: true,
         lowercase: true,
         minLength: 3,
-        maxLength: 30,
+        maxLength: 45,
         index: true
     },
     hash: {
